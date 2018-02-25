@@ -84,7 +84,7 @@ SCENARIO("gaussian filter effectiveness", "[gaussian][filter]")
                 }
                 variance/=output_image.size();
                 
-                REQUIRE( std::sqrt(variance) == 0 );
+                REQUIRE( std::sqrt(variance) <= 1 );
             }
         }
     }
