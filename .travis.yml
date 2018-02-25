@@ -22,8 +22,8 @@ matrix:
       env: BUILD_TYPE=Debug CPP=14 COMPILER_VER=6
 
 before_script:
-  - export CXX=${COMPILER}
-  - cd ${TRAVIS_BUILD_DIR}
+  - export CXX=${CXX}-${COMPILER_VER}
+  - export CC=${CC}-${COMPILER_VER}
   - cmake -H. -Bbuild -DCMAKE_BUILD_TYPE=${BUILD_TYPE} -Wdev
   - cd build
 
