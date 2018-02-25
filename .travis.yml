@@ -1,6 +1,7 @@
 language: cpp
 script:
-  - cmake
+  - cmake .
+  - cmake --build .
   - ctest -j2 -VV
 
 compiler:
@@ -9,12 +10,12 @@ compiler:
 
 matrix:
   include:
-    - env: BUILD_TYPE=Release CPP=11 SYSTEM_LIBCXX=On
+    - env: BUILD_TYPE=Release CPP=14 SYSTEM_LIBCXX=On
       os: osx
       compiler: 
         - clang
 
-    - env: BUILD_TYPE=Release CPP=11 SYSTEM_LIBCXX=On
+    - env: BUILD_TYPE=Release CPP=14 SYSTEM_LIBCXX=On
       os: linux
       compiler: 
         - gcc
