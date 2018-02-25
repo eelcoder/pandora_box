@@ -9,7 +9,7 @@ matrix:
 
     - os: osx
       compiler: clang
-      env: COMPILER='clang++' BUILD_TYPE='Debug'
+      env: COMPILER='clang++' CPP=14 BUILD_TYPE='Debug'
 
     - os: linux
       compiler: gcc
