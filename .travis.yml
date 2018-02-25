@@ -12,8 +12,11 @@ matrix:
   include:
     - env: BUILD_TYPE=Release CPP=14 SYSTEM_LIBCXX=On
       os: osx
-      compiler: 
-        - clang
+      compiler: clang
+
+    - os: osx
+      compiler: clang
+      env: COMPILER='clang++' BUILD_TYPE='Debug'
 
     - env: BUILD_TYPE=Release CPP=14 SYSTEM_LIBCXX=On
       os: linux
@@ -24,3 +27,8 @@ matrix:
           sources: ['ubuntu-toolchain-r-test']
           packages: ['g++-6']
       env: COMPILER='g++-6' BUILD_TYPE='Release'
+
+    - os: linux
+        compiler: gcc
+        addons: *gcc6
+        env: COMPILER='g++-6' BUILD_TYPE='Debug'
