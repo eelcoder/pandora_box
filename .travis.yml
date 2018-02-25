@@ -1,0 +1,24 @@
+language: cpp
+script: cmake
+
+compiler:
+  - clang
+  - gcc
+
+matrix:
+  include:
+   include:
+    - env: BUILD_TYPE=Release CPP=11 SYSTEM_LIBCXX=On
+      os: osx
+      compiler: 
+      	- clang
+      	- gcc
+
+    - env: BUILD_TYPE=Release CPP=11 SYSTEM_LIBCXX=On
+      os: linux
+      compiler: 
+      	- clang
+      	- gcc
+
+script:
+  - ctest -j2 -VV
