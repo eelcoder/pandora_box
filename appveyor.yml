@@ -1,18 +1,19 @@
 version: '1.0.{build}'
 
+shallow_clone: true
 image: Visual Studio 2017
 
 platform:
-- x86
-- x64
+   - x86
+   - x64
 
 configuration:
-- Debug
-- Release
+   - Debug
+   - Release
 
 install:
-  - mkdir build && cd build
-  - cmake .. -DCMAKE_BUILD_TYPE=%CONFIGURATION%
+   - mkdir build && cd build
+   - cmake .. -DCMAKE_BUILD_TYPE=%CONFIGURATION%
 
 build:
    project: c:/projects/pandora_box/build/ALL_BUILD.vcxproj
@@ -20,6 +21,6 @@ build:
    verbosity: minimal
 
 test_script:
-- ctest -j2
+   - ctest -j2
 
 deploy: off
