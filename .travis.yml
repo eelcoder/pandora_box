@@ -30,3 +30,8 @@ before_script:
 script:
   - make -j 2
   - ctest -V -j 2
+
+notifications:
+  slack:
+    on_success: never
+    on_failure: never
