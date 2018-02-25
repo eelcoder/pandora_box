@@ -15,7 +15,7 @@ install:
   - cmake .. -DCMAKE_BUILD_TYPE=%CONFIGURATION%
 
 build:
-   project: c:/projects/pandora_box/build/ALL_BUILD.sln
+   project: c:/projects/pandora_box/build/ALL_BUILD.vcxproj
    parallel: true
    verbosity: minimal
 
