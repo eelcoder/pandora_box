@@ -10,13 +10,14 @@ configuration:
 - Debug
 - Release
 
-before_build:
-- cmake -G "Visual Studio 15 2017 Win64" .
+install:
+  - mkdir build && cd build
+  - cmake .. -DCMAKE_BUILD_TYPE=%CONFIGURATION% -T
 
 build:
-project: $(APPVEYOR_BUILD_FOLDER)\$(APPVEYOR_PROJECT_NAME).sln
-parallel: true
-verbosity: minimal
+   project: c:/projects/pandora_box/build/ALL_BUILD.sln
+   parallel: true
+   verbosity: minimal
 
 test_script:
 - ctest -j2
