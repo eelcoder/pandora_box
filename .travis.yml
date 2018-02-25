@@ -19,3 +19,8 @@ matrix:
       os: linux
       compiler: 
         - gcc
+      addons: &gcc6
+        apt:
+          sources: ['ubuntu-toolchain-r-test']
+          packages: ['g++-6']
+      env: COMPILER='g++-6' BUILD_TYPE='Release'
